@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges - CodePen Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #000;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            border-bottom: 1px solid #2c2c2c;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #47cf73;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .nav a:hover {
+            color: #47cf73;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .page-header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 20px;
+            color: #999;
+        }
+
+        .challenges-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .challenge-card {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 30px;
+            border: 1px solid #2c2c2c;
+            transition: all 0.2s;
+        }
+
+        .challenge-card:hover {
+            border-color: #47cf73;
+            transform: translateX(10px);
+        }
+
+        .challenge-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+
+        .challenge-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #47cf73;
+        }
+
+        .challenge-difficulty {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .difficulty-easy {
+            background: rgba(71, 207, 115, 0.2);
+            color: #47cf73;
+        }
+
+        .difficulty-medium {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+
+        .difficulty-hard {
+            background: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+        }
+
+        .challenge-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .challenge-meta {
+            display: flex;
+            gap: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-start {
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #47cf73;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+
+        .btn-start:hover {
+            background: #3ab864;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo">Code<span>Pen</span></a>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="trending.html">Trending</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="editor.html">Create</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <h1> Weekly Challenges</h1>
+            <p>Test your skills and learn something new</p>
+        </div>
+
+        <div class="challenges-list">
+            <div class="challenge-card">
+                <div class="challenge-header">
+                    <div>
+                        <h3 class="challenge-title">Animated Navigation Menu</h3>
+                        <div class="challenge-description">
+                            Create a responsive navigation menu with smooth animations. The menu should collapse into a hamburger icon on mobile devices and expand with a slide animation.
+                        </div>
+                    </div>
+                    <span class="challenge-difficulty difficulty-easy">Easy</span>
+                </div>
+                <div class="challenge-meta">
+                    <span class="meta-item"> 2-3 hours</span>
+                    <span class="meta-item"> 234 participants</span>
+                    <span class="meta-item"> 50 points</span>
+                </div>
+                <a href="editor.html" class="btn-start">Start Challenge</a>
+            </div>
+
+            <div class="challenge-card">
+                <div class="challenge-header">
+                    <div>
+                        <h3 class="challenge-title">Interactive Dashboard</h3>
+                        <div class="challenge-description">
+                            Build a data visualization dashboard with interactive charts. Use CSS Grid for layout and create at least 3 different types of data representations.
+                        </div>
+                    </div>
+                    <span class="challenge-difficulty difficulty-medium">Medium</span>
+                </div>
+                <div class="challenge-meta">
+                    <span class="meta-item"> 4-6 hours</span>
+                    <span class="meta-item"> 156 participants</span>
+                    <span class="meta-item"> 100 points</span>
+                </div>
+                <a href="editor.html" class="btn-start">Start Challenge</a>
+            </div>
+
+            <div class="challenge-card">
+                <div class="challenge-header">
+                    <div>
+                        <h3 class="challenge-title">3D CSS Game</h3>
+                        <div class="challenge-description">
+                            Create a fully functional game using only HTML and CSS (no JavaScript allowed!). Use CSS animations, transforms, and creative use of checkboxes for interactivity.
+                        </div>
+                    </div>
+                    <span class="challenge-difficulty difficulty-hard">Hard</span>
+                </div>
+                <div class="challenge-meta">
+                    <span class="meta-item"> 8-12 hours</span>
+                    <span class="meta-item"> 89 participants</span>
+                    <span class="meta-item"> 250 points</span>
+                </div>
+                <a href="editor.html" class="btn-start">Start Challenge</a>
+            </div>
+
+            <div class="challenge-card">
+                <div class="challenge-header">
+                    <div>
+                        <h3 class="challenge-title">Responsive Portfolio Template</h3>
+                        <div class="challenge-description">
+                            Design and build a modern, responsive portfolio website. Must include smooth scrolling, a project gallery, contact form, and work on all screen sizes.
+                        </div>
+                    </div>
+                    <span class="challenge-difficulty difficulty-medium">Medium</span>
+                </div>
+                <div class="challenge-meta">
+                    <span class="meta-item"> 5-7 hours</span>
+                    <span class="meta-item"> 312 participants</span>
+                    <span class="meta-item"> 120 points</span>
+                </div>
+                <a href="editor.html" class="btn-start">Start Challenge</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

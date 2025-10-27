@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Pens - CodePen Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #000;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            border-bottom: 1px solid #2c2c2c;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #47cf73;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .nav a:hover {
+            color: #47cf73;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .page-header {
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: #999;
+        }
+
+        .filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: #1a1a1a;
+            border: 1px solid #2c2c2c;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #47cf73;
+            color: #000;
+            border-color: #47cf73;
+        }
+
+        .pens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .pen-card {
+            background: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #2c2c2c;
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .pen-card:hover {
+            transform: translateY(-5px);
+            border-color: #47cf73;
+        }
+
+        .pen-preview {
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .pen-card:nth-child(1) .pen-preview {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .pen-card:nth-child(2) .pen-preview {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .pen-card:nth-child(3) .pen-preview {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .pen-card:nth-child(4) .pen-preview {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .pen-card:nth-child(5) .pen-preview {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        .pen-card:nth-child(6) .pen-preview {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .pen-info {
+            padding: 20px;
+        }
+
+        .pen-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .pen-author {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .pen-stats {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo">Code<span>Pen</span></a>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="trending.html">Trending</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="editor.html">Create</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <h1> Trending Pens</h1>
+            <p>Most popular pens this week</p>
+        </div>
+
+        <div class="filters">
+            <a href="#" class="filter-btn active">This Week</a>
+            <a href="#" class="filter-btn">This Month</a>
+            <a href="#" class="filter-btn">All Time</a>
+        </div>
+
+        <div class="pens-grid">
+            <a href="editor.html" class="pen-card">
+                <div class="pen-preview">Glassmorphism UI</div>
+                <div class="pen-info">
+                    <div class="pen-title">Modern Glass Effect</div>
+                    <div class="pen-author">by Sarah Connor</div>
+                    <div class="pen-stats">
+                        <span class="stat"> 2.4k</span>
+                        <span class="stat"> 12k</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="editor.html" class="pen-card">
+                <div class="pen-preview">Animated Menu</div>
+                <div class="pen-info">
+                    <div class="pen-title">Hamburger Menu Animation</div>
+                    <div class="pen-author">by Mike Ross</div>
+                    <div class="pen-stats">
+                        <span class="stat"> 1.8k</span>
+                        <span class="stat"> 9.5k</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="editor.html" class="pen-card">
+                <div class="pen-preview">Wave Effect</div>
+                <div class="pen-info">
+                    <div class="pen-title">SVG Wave Animation</div>
+                    <div class="pen-author">by Emma Watson</div>
+                    <div class="pen-stats">
+                        <span class="stat"> 3.1k</span>
+                        <span class="stat"> 15k</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="editor.html" class="pen-card">
+                <div class="pen-preview">Neumorphism Card</div>
+                <div class="pen-info">
+                    <div class="pen-title">Soft UI Components</div>
+                    <div class="pen-author">by Chris Evans</div>
+                    <div class="pen-stats">
+                        <span class="stat"> 2.9k</span>
+                        <span class="stat"> 13k</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="editor.html" class="pen-card">
+                <div class="pen-preview">Loading Animation</div>
+                <div class="pen-info">
+                    <div class="pen-title">Creative CSS Loader</div>
+                    <div class="pen-author">by Tom Holland</div>
+                    <div class="pen-stats">
+                        <span class="stat"> 1.5k</span>
+                        <span class="stat"> 8k</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="editor.html" class="pen-card">
+                <div class="pen-preview">Particle System</div>
+                <div class="pen-info">
+                    <div class="pen-title">Canvas Particle Effect</div>
+                    <div class="pen-author">by Zoe Kravitz</div>
+                    <div class="pen-stats">
+                        <span class="stat"> 4.2k</span>
+                        <span class="stat"> 18k</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

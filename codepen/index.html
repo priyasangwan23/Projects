@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePen Clone - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family:'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+        }
+
+        /* Header */
+        .header {
+            background: #000;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            border-bottom: 1px solid #2c2c2c;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #47cf73;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover {
+            color: #47cf73;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #47cf73;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: #3ab864;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #444;
+        }
+
+        .btn-secondary:hover {
+            border-color: #47cf73;
+            color: #47cf73;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #47cf73);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #999;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Featured Pens */
+        .section {
+            padding: 80px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .pens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pen-card {
+            background: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            border: 1px solid #2c2c2c;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .pen-card:hover {
+            transform: translateY(-5px);
+            border-color: #47cf73;
+        }
+
+        .pen-preview {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .pen-card:nth-child(2) .pen-preview {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .pen-card:nth-child(3) .pen-preview {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .pen-info {
+            padding: 20px;
+        }
+
+        .pen-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .pen-author {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid #2c2c2c;
+            margin-top: 80px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #47cf73;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <a href="index.html" class="logo">Code<span>Pen</span></a>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="trending.html">Trending</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="editor.html">Create</a>
+        </nav>
+        <div class="header-right">
+            <a href="#" class="btn btn-secondary">Log In</a>
+            <a href="#" class="btn btn-primary">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>The Best Place to Build, Test, and Discover Front-end Code</h1>
+        <p>CodePen is a social development environment for front-end designers and developers.</p>
+        <div class="hero-buttons">
+            <a href="editor.html" class="btn btn-primary">Start Coding</a>
+            <a href="trending.html" class="btn btn-secondary">Explore Pens</a>
+        </div>
+    </div>
+
+    <!-- Featured Pens -->
+    <div class="section">
+        <h2 class="section-title">Featured Pens</h2>
+        <div class="pens-grid">
+            <a href="editor.html" class="pen-card">
+                <div class="pen-preview">Animated Button</div>
+                <div class="pen-info">
+                    <div class="pen-title">CSS Animation Demo</div>
+                    <div class="pen-author">by John Doe</div>
+                </div>
+            </a>
+            <a href="editor.html" class="pen-card">
+                <div class="pen-preview">Particle Effect</div>
+                <div class="pen-info">
+                    <div class="pen-title">JavaScript Particles</div>
+                    <div class="pen-author">by Jane Smith</div>
+                </div>
+            </a>
+            <a href="editor.html" class="pen-card">
+                <div class="pen-preview">3D Card Flip</div>
+                <div class="pen-info">
+                    <div class="pen-title">Interactive Card</div>
+                    <div class="pen-author">by Alex Johnson</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Help</a>
+        </div>
+        <p>&copy; 2024 CodePen . All rights reserved.</p>
+    </div>
+</body>
+</html>
