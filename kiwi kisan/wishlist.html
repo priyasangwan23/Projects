@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wishlist</title>
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background-color: #2d5f4f;
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .banner-icon {
+            font-size: 18px;
+        }
+
+        /* Header */
+        .header {
+            background-color: white;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .logo-subtitle {
+            font-size: 10px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 30px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px 20px;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .search-icon {
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .wishlist {
+        text-align: center;
+        padding: 80px 0;
+        }
+
+        .wishlist h2 {
+        font-size: 20px;
+        color: #000;
+        }
+
+        .wishlist a {
+        display: block;
+        margin-top: 10px;
+        color: #01472b;
+        text-decoration: none;
+        font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+        background-color: #01472b;
+        color: white;
+        padding: 50px 80px;
+        }
+
+        .footer-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        }
+
+        .footer-logo img {
+        width: 120px;
+        margin-bottom: 10px;
+        }
+
+        .newsletter {
+        display: flex;
+        margin-top: 10px;
+        }
+
+        .newsletter input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        }
+
+        .newsletter button {
+        background-color: #7cc142;
+        border: none;
+        padding: 0 15px;
+        cursor: pointer;
+        }
+
+        .social {
+        margin-top: 15px;
+        }
+
+        .social i {
+        font-size: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        }
+
+        .footer-links h3,
+        .footer-contact h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        }
+
+        .footer-links a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 8px;
+        font-size: 15px;
+        }
+
+        .footer-contact p {
+        margin-bottom: 10px;
+        font-size: 15px;
+        line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+        .footer-content {
+            grid-template-columns: 1fr 1fr;
+        }
+        }
+
+        @media (max-width: 600px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+        }
+        .navbar {
+            flex-direction: column;
+        }
+        }
+
+    </style>
+</head>
+<body>
+   <!-- Top Banner -->
+    <div class="top-banner">
+        <span class="banner-icon">📦</span>
+        <span>COD Available Now + Orders Ship Within 24 Hours</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <button class="menu-icon">☰</button>
+        
+        <div class="logo">
+            <div class="logo-icon">🥝</div>
+            <div>
+                <div class="logo-text">KIWI</div>
+                <div class="logo-subtitle">KISAN WINDOW</div>
+            </div>
+        </div>
+
+        <div class="header-icons">
+            <button class="icon-btn"><a href="login.html">👤</a></button>
+            <button class="icon-btn">🔔</button>
+            <button class="icon-btn">🛒</button>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Sea Buckthorn Jam">
+            <span class="search-icon">🔍</span>
+        </div>
+    </div>
+ <section class="wishlist">
+    <h2>Add Item To Your Wishlist!</h2>
+    <a href="#">Explore</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        🥝
+        <p>Subscribe to our newsletter</p>
+        <div class="newsletter">
+          <input type="email" placeholder="Email">
+          <button><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="social">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h3>SERVICES</h3>
+        <a href="#">Shop</a>
+        <a href="#">Track Your Order</a>
+        <a href="#">About Us</a>
+        <a href="#">Blog</a>
+        <a href="#">Bulk Order</a>
+        <a href="#">Contact Us</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>OTHER LINKS</h3>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+
+      <div class="footer-contact">
+        <h3>CONTACT KIWI</h3>
+        <p>customercare@kisanwindow.com</p>
+        <p>Tel: +91 7217010107</p>
+        <p>Plot No 5383, Enfield By Pass, near Police Chowki,<br>
+        Anfield Grant, Vikasnagar, Uttarakhand 248198</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
