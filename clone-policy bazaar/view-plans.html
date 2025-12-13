@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View plans</title>
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f5f5f5 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-btn {
+            padding: 10px 25px;
+            border: 2px solid #2196F3;
+            background-color: #fff;
+            color: #2196F3;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .header-btn:hover {
+            background-color: #2196F3;
+            color: #fff;
+        }
+
+        .header-btn:last-child {
+            background-color: #fff;
+            border-color: #2196F3;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .hero-title .amount {
+            color: #2196F3;
+            font-weight: 700;
+        }
+
+        .hero-title .from {
+            color: #2196F3;
+            font-weight: 700;
+        }
+
+        .hero-title .price {
+            font-size: 28px;
+        }
+
+        .hero-title .small-text {
+            font-size: 18px;
+            color: #666;
+            vertical-align: super;
+        }
+
+        /* Badges */
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #e8f5e9;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .badge.promise {
+            background-color: #fff3e0;
+        }
+
+        .badge-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .badge-text {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .badge-subtext {
+            color: #4caf50;
+            font-weight: 700;
+        }
+
+        .badge.promise .badge-subtext {
+            color: #ff9800;
+        }
+
+        /* Form Card */
+        .form-card {
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Gender Toggle */
+        .gender-toggle {
+            display: flex;
+            gap: 0;
+            margin-bottom: 30px;
+        }
+
+        .gender-input {
+            display: none;
+        }
+
+        .gender-btn {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            background-color: #fff;
+            color: #666;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .gender-btn:first-of-type {
+            border-radius: 8px 0 0 8px;
+        }
+
+        .gender-btn:last-of-type {
+            border-radius: 0 8px 8px 0;
+            border-left: none;
+        }
+
+        .gender-input:checked + .gender-btn {
+            background-color: #2196F3;
+            color: white;
+            border-color: #2196F3;
+        }
+
+        .gender-input:checked + .gender-btn + .gender-input + .gender-btn {
+            border-left: 2px solid #e0e0e0;
+        }
+
+        /* Form Group */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #2196F3;
+        }
+
+        .form-input::placeholder {
+            color: #bbb;
+        }
+
+        /* Phone Input */
+        .phone-input-group {
+            display: flex;
+            gap: 0;
+        }
+
+        .country-select {
+            width: 140px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-right: none;
+            border-radius: 8px 0 0 8px;
+            font-size: 16px;
+            background-color: #f8f8f8;
+            cursor: pointer;
+        }
+
+        .country-select:focus {
+            outline: none;
+            border-color: #2196F3;
+        }
+
+        .phone-code {
+            padding: 15px 10px;
+            border: 2px solid #e0e0e0;
+            border-left: none;
+            border-right: none;
+            background-color: #f8f8f8;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .phone-input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-left: none;
+            border-radius: 0 8px 8px 0;
+            font-size: 16px;
+        }
+
+        .phone-input:focus {
+            outline: none;
+            border-color: #2196F3;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(90deg, #ff6b35 0%, #ff8b5a 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Info Text */
+        .info-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #666;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            color: #2196F3;
+        }
+
+        /* WhatsApp Toggle */
+        .whatsapp-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .whatsapp-icon {
+            color: #25D366;
+            font-size: 18px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            background-color: #2196F3;
+            border-radius: 13px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            background-color: white;
+            border-radius: 50%;
+            top: 2px;
+            right: 2px;
+            transition: transform 0.3s;
+        }
+
+        .toggle-switch.off {
+            background-color: #ccc;
+        }
+
+        .toggle-switch.off::after {
+            transform: translateX(-24px);
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .disclaimer a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+
+        .disclaimer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Statistics Section */
+        .statistics-section {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .platform-description {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .platform-description strong {
+            color: #333;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 5px;
+        }
+
+        .star {
+            font-size: 32px;
+            color: #ffd700;
+        }
+
+        .star.half {
+            position: relative;
+            overflow: hidden;
+            width: 32px;
+        }
+
+        .star.half::after {
+            content: '⭐';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            overflow: hidden;
+            color: #ffd700;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2196F3;
+            margin-bottom: 5px;
+        }
+
+        .stat-unit {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Disclaimers Accordion */
+        .disclaimers-accordion {
+            margin-top: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .accordion-checkbox {
+            display: none;
+        }
+
+        .accordion-header {
+            padding: 20px 25px;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .accordion-header:hover {
+            background-color: #e9ecef;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s;
+            color: #666;
+        }
+
+        .accordion-checkbox:checked + .accordion-header .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 25px;
+        }
+
+        .accordion-checkbox:checked ~ .accordion-content {
+            max-height: 500px;
+            padding: 20px 25px;
+        }
+
+        .accordion-content p {
+            margin-bottom: 12px;
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .accordion-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .form-card {
+                padding: 25px 20px;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+        }
+    </style>
+    </style>
+</head>
+<body>
+    
+   <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.png" alt="PolicyBazaar">
+            </div>
+            <div class="header-actions">
+                <button class="header-btn">
+                    <span>🤝</span>
+                    Claim Assistance
+                </button>
+                <button class="header-btn">
+                    <span>📞</span>
+                    Talk to Expert
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1 class="hero-title">
+                <span class="amount">₹1 Crore</span> life cover starting <span class="from">from</span> <span class="price">₹400</span><span class="small-text">/month<sup>+</sup></span>
+            </h1>
+        </div>
+
+        <!-- Badges -->
+        <div class="badges">
+            <div class="badge">
+                <svg class="badge-icon" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="#4caf50" stroke-width="2"/>
+                    <path d="M8 12l2 2 4-4" stroke="#4caf50" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <div>
+                    <div class="badge-text">Get an</div>
+                    <div class="badge-subtext">Online Discount of 15%<sup>#</sup></div>
+                </div>
+            </div>
+            <div class="badge promise">
+                <svg class="badge-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" stroke="#ff9800" stroke-width="2" fill="none"/>
+                </svg>
+                <div>
+                    <div class="badge-text">PB Promise</div>
+                    <div class="badge-subtext">Lowest Price Guarantee<sup>^</sup></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Card -->
+        <div class="form-card">
+            <!-- Gender Toggle -->
+            <div class="gender-toggle">
+                <button class="gender-btn active" onclick="selectGender('male')">Male</button>
+                <button class="gender-btn" onclick="selectGender('female')">Female</button>
+            </div>
+
+            <!-- Name Input -->
+            <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-input" placeholder="Enter Your Name">
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label class="form-label">Date of Birth</label>
+                <input type="text" class="form-input" placeholder="DD/MM/YYYY">
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group">
+                <label class="form-label">Mobile Number</label>
+                <div class="phone-input-group">
+                    <select class="country-select">
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                    </select>
+                    <div class="phone-code">+91</div>
+                    <input type="tel" class="phone-input" placeholder="Enter Mobile Number">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="submit-btn">View Plans</button>
+
+            <!-- Info Text -->
+            <div class="info-text">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="#2196F3"/>
+                </svg>
+                <span>Only certified Policybazaar expert will assist you</span>
+            </div>
+
+            <!-- WhatsApp Toggle -->
+            <div class="whatsapp-toggle">
+                <span class="whatsapp-icon">💬</span>
+                <span>Get updates on WhatsApp</span>
+                <div class="toggle-switch" onclick="toggleWhatsApp(this)"></div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer">
+                By clicking, you agree to our <a href="#">Privacy policy</a>, <a href="#">Terms of Use</a> & <sup>+</sup> <a href="#">Disclaimers</a>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="statistics-section">
+            <div class="platform-description">
+                <p>Policybazaar is one of <strong>India's leading digital insurance platform</strong></p>
+            </div>
+            <div class="stats-container">
+                <div class="star-rating">
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                    <span class="star half">⭐</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12.02 <span class="stat-unit">Crore</span></div>
+                    <div class="stat-label">Registered Consumers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">51</div>
+                    <div class="stat-label">Insurance Partners</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5.9 <span class="stat-unit">Crore</span></div>
+                    <div class="stat-label">Policies Sold</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclaimers Accordion -->
+        <div class="disclaimers-accordion">
+            <input type="checkbox" id="accordion-toggle" class="accordion-checkbox">
+            <label for="accordion-toggle" class="accordion-header">
+                <span>Disclaimers*</span>
+                <span class="accordion-icon">▼</span>
+            </label>
+            <div class="accordion-content">
+                <p>* The content provided is for informational purposes only. Terms and conditions apply. Please read the policy documents carefully before purchasing.</p>
+                <p><sup>#</sup> Online discount varies by insurer and policy type. Subject to eligibility criteria.</p>
+                <p><sup>^</sup> Lowest price guarantee is subject to terms and conditions. Compare similar policies for best results.</p>
+                <p><sup>+</sup> Standard terms apply. Coverage amount and premiums are indicative and may vary based on individual profile and insurer underwriting.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
