@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ===== BASE STYLES ===== */
+.main {
+    background-color: rgb(232, 225, 217);
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+}
+
+/* ===== NAVBAR & HEADER ===== */
+.ak {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.input-group input {
+    border-left: none;
+    border-radius: 15px;
+}
+
+.input-group span {
+    border-right: none;
+    border-radius: 15px;
+}
+
+.nav img {
+    height: 60px;
+}
+
+/* ===== PRODUCT GRIDS ===== */
+.image {
+    margin: 0 auto;
+}
+
+.image img {
+    height: 100px;
+}
+
+.image h5 {
+    font-weight: 500;
+    margin-top: 15px;
+    font-size: 19px;
+}
+
+.image p {
+    font-weight: 600;
+    margin-top: 0;
+    font-size: 15px;
+    margin: 0 auto;
+}
+
+.image h2 {
+    margin: 5px;
+}
+
+/* ===== ABHI SECTIONS ===== */
+.abhi {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+
+.abhi .col-sm-4 img {
+    height: 100%;
+    width: 98%;
+    border-radius: 5px;
+    padding-top: 3px;
+}
+
+/* ===== CARD COMPONENTS ===== */
+.abhi-g {
+    height: 100%;
+    width: 50%;
+}
+
+.abhi-g .card {
+    height: 300px;
+    width: 100%;
+}
+
+.abhi-text {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.abhi-text .card-title {
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+
+.abhi-text .card-text {
+    font-size: 19px;
+    line-height: normal;
+}
+
+.abhi-g img {
+    height: 220px;
+    width: 100%;
+}
+
+.abhi-font h4 {
+    margin-bottom: 20px;
+    margin-top: 15px;
+    font-weight: 400;
+}
+
+/* ===== SPECIAL SECTIONS ===== */
+.sal {
+    height: 100%;
+    width: 100%;
+}
+
+.sal img {
+    height: 687px;
+    width: 100%;
+    align-items: center;
+}
+
+.flight {
+    height: 100%;
+    width: 100%;
+}
+
+.flight img {
+    height: 100%;
+    width: 100%;
+}
+
+.flight-image {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flight-image img {
+    height: 100%;
+    width: 25%;
+    padding-left: -10px;
+    padding-right: -15px;
+}
+
+/* ===== FOOTER ===== */
+.a0 {
+    background-color: gray;
+}
+
+/* ===== DETAIL PAGE ===== */
+.detailpage {
+    height: 700px;
+    width: 95%;
+    margin: 50px auto;
+}
+
+.detailpage img {
+    height: 450px;
+    padding: 30px;
+}
+
+.detailpage button {
+    height: 50px;
+    width: 180px;
+    margin-left: 28px;
+    background-color: orange;
+}
+
+.detailpage button i {
+    padding-right: 10px;
+    font-weight: 600;
+    color: white;
+}
+
